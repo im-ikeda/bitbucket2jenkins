@@ -1,0 +1,48 @@
+{
+  "name": "bitbucket2jenkins",
+  "version": "0.0.1",
+  "description": "hubot scripts: bitbucket notification to jenkins",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "bitbucket",
+    "jenkins"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/im-ikeda/bitbucket2jenkins.git"
+  },
+  "author": {
+    "name": "im-ikeda"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/im-ikeda/bitbucket2jenkins/issues"
+  },
+  "_id": "bitbucket2jenkins@0.0.1",
+  "dist": {
+    "shasum": "ee5027c34233484ef2b0f9c5927783b338661242",
+    "tarball": "http://registry.npmjs.org/bitbucket2jenkins/-/bitbucket2jenkins-0.3.0.tgz"
+  },
+  "_from": "bitbucket2jenkins@>=0.0.1",
+  "_npmVersion": "0.0.1",
+  "_npmUser": {
+    "name": "im-ikeda",
+    "email": "im.ikeda@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "im-ikeda",
+      "email": "im.ikeda@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "ee5027c34233484ef2b0f9c5927783b338661242",
+  "_resolved": "https://registry.npmjs.org/bitbucket2jenkins/-/bitbucket2jenkins-0.0.1.tgz",
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/im-ikeda/bitbucket2jenkins#readme"
+}
