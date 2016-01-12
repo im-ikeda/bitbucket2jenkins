@@ -30,17 +30,16 @@ module.exports = (robot) ->
     query = querystring.parse(req._parsedUrl.query)
     { branch, token, job } = query
     { branch } = config unless branch?
-    console.log(req);
+
     { body } = req
-  
-    console.log(body);
-  
+
     event_type = req.get 'X-Event-Key'
-    res.end "OK" if event_type != "repo:push"
+    res.end "OK1" if event_type != "repo:push"
   
-    res.end "OK" if body.changes?.new?.name? != branch
+    res.end "OK2" if body.changes?.new?.name? != branch
   
-    jenkinsurl = process.env.HUBOT_JENKINS_URL
-  
-    robot.http("{#jenkinsurl}/job/{#job}/build?token={#token}").get(err, res, body) ->
-      res.end "OK"
+    jenkinsurl = process.env.HUBOT_JENKINS_URL;
+
+    robot.http("#{jenkinsurl}/job/#{job}/build?token=#{token}")
+      .get() (e, r, b) ->
+        res.end "OK(#{e}:#{r})"
