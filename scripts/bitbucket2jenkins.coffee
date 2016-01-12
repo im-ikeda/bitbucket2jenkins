@@ -36,7 +36,7 @@ module.exports = (robot) ->
     event_type = req.get 'X-Event-Key'
     res.end "OK(not repo:push)" if event_type != "repo:push"
   
-    res.end "OK(branch is not #{branch})" if body.push?.changes?.new?.name? != branch
+    res.end "OK(branch is not #{branch})" if body.push?.changes[0]?.new?.name? != branch
   
     jenkinsurl = process.env.HUBOT_JENKINS_URL;
 
