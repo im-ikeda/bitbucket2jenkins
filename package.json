@@ -1,6 +1,6 @@
 {
   "name": "bitbucket2jenkins",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "hubot scripts: bitbucket notification to jenkins",
   "main": "index.coffee",
   "scripts": {

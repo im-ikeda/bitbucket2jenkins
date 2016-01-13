@@ -42,5 +42,8 @@ module.exports = (robot) ->
     jenkinsurl = process.env.HUBOT_JENKINS_URL;
 
     robot.http("#{jenkinsurl}/job/#{job}/build?token=#{token}")
-      .get() (e, r, b) ->
-        res.end "OK(#{e}:#{r})"
+      .header('X-Event-Key', event_type)
+      .header('User-Agent', req.get('User-Agent'))
+      .header('Content-Type', 'application/json')
+      .post(JSON.stringify(body)) (e, r, b) ->
+        res.end "OK[#{jenkinsurl}/job/#{job}/build?token=#{token}]=(#{e}:#{r})"
