@@ -27,16 +27,17 @@ module.exports = (robot) ->
     branch: process.env.HUBOT_BITBUCKET2JENKINS_BRANCH || "master"
 
   robot.router.post "/bitbucket2jenkins", (req, res) ->
+    body = req.body
+
     query = querystring.parse(req._parsedUrl.query)
     { branch, token, job } = query
     { branch } = config unless branch?
 
-    { body } = req
-
     event_type = req.get 'X-Event-Key'
     res.end "OK(not repo:push)" if event_type != "repo:push"
   
-    res.end "OK(branch is not #{branch})" if body.push?.changes?.new?.name? != branch
+    pushbranch = body.push.changes[0].new.name;
+    res.end "OK(branch(#{pushbranch}) is not #{branch})" if pushbranch != branch
   
     jenkinsurl = process.env.HUBOT_JENKINS_URL;
 
