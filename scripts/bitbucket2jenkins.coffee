@@ -27,7 +27,7 @@ module.exports = (robot) ->
     branch: process.env.HUBOT_BITBUCKET2JENKINS_BRANCH || "master"
 
   robot.router.post "/bitbucket2jenkins", (req, res) ->
-    body = JSON.parse req.body.payload
+    body = req.body
 
     query = querystring.parse(req._parsedUrl.query)
     { branch, token, job } = query
